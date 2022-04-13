@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #222;
+    line-height: 1.5em;
+}
+
+a {
+    /* a태그는 body에 따르지 않기 때문에 따로 색상 지정 */
+    color: #222;
+    text-decoration: none;
+}
+
+.dropdown {
+    width: 200px;
+}
+.dropdown-btn {
+    width: inherit;
+    padding: 10px;
+    font-style: 20px;
+    background-color: yellowgreen;
+    color: #fff;
+    /* button태그나 input요소는 기본적인 명암이 들어가 있기 때문에 없애고 싶으면 border none으로 없앨것 */
+    border: none;
+    cursor: pointer;
+}
+.dropdown-submenu {
+    display: none;
+    width: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+}
+.dropdown-submenu a {
+    display: block;
+    padding: 7px;
+    text-align: center;
+}
+
+.dropdown-submenu a:hover {
+    background-color: #eee;
+}
+/* 가상클래스 다음에 나오는 것은 자식요소로 되어야만 한다
+만약 자식요소가 아니라면 + 로 이어주면 됨
+.dropdown:hover + .dropdown-submenu 와 같은 방법
+잘은 사용되지 않는 방법임 */
+.dropdown:hover .dropdown-submenu {
+    display: block;
+}
